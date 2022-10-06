@@ -10,7 +10,7 @@ export default class UserLocalStorage {
   isLoggedIn () {
     if (localStorage.getItem (constant.isLoggedIn) == null) {
       if (!window.location.pathname.includes ('index.html')) {
-        window.location = '../../index.html';
+        window.location = '/../../index.html';
       }
       return false;
     } else {
@@ -21,7 +21,7 @@ export default class UserLocalStorage {
         }
       } else {
         if (!window.location.pathname.includes ('index.html')) {
-          window.location = '../index.html';
+          window.location = '/../index.html';
         }
       }
     }
@@ -59,7 +59,7 @@ export default class UserLocalStorage {
   attackingGuard () {
     localStorage.clear ();
     if (!window.location.pathname.includes ('index.html')) {
-      window.location = '../index.html';
+      window.location = '/../index.html';
     }
   }
 }
