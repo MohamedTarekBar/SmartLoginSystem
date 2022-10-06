@@ -1,0 +1,155 @@
+:root {
+    --text-color: cornflowerblue;
+    --bg-color: #f1f1f1;
+    --light-text-color: rgb(126, 164, 233);
+}
+@font-face {
+    font-family: opensans;
+    src: url(./webfonts/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+.dropdown-toggle::before {
+    display: flex;
+    
+}
+.dropdown-toggle {
+    align-items: center;
+}
+
+.indicator {
+    z-index: 99999999999;
+    background-color: rgba(47, 47, 47, 0.939);
+}
+
+body {
+    font-family: opensans
+}
+
+.text-soft-purble {
+    color: var(--text-color);
+}
+
+.text-light-purble,.text-light-purble:active,.text-light-purble:focus {
+    color: var(--light-text-color);
+}
+
+.text-light-purble-hover:hover {
+    color: var(--text-color);
+}
+
+.bg-light-gray {
+    background-color: var(--bg-color);
+}
+
+.bg-soft-purble {
+    background-color: var(--text-color);
+    color: white;
+}
+
+.bg-soft-purble-hover:hover {
+    background-color: transparent;
+    border-color: unset;
+    outline: 0;
+    color: var(--text-color);
+}
+
+.w-fit-content {
+    width: fit-content;
+}
+
+.h-fit-content {
+    height: fit-content;
+}
+
+.light-shadow {
+    box-shadow: 0 0 9px #00000038;
+}
+
+/* clouds part */
+.clouds {
+    background: linear-gradient(to bottom, skyblue, cornflowerblue);
+    overflow: hidden;
+    position: absolute;
+    inset: 0;
+}
+
+.cloud-container {
+    position: relative;
+    inset: 0;
+}
+
+.cloud.one {
+    top: 50%;
+    width: 300px;
+    height: 100px;
+}
+
+.cloud.two {
+    top: 30%;
+    width: 60px;
+    height: 20px;
+    animation-duration: 10s;
+}
+
+.cloud.three {
+    top: 20%;
+    width: 120px;
+    height: 40px;
+    animation-duration: 8s;
+}
+
+.cloud {
+    position: absolute;
+    left: 0;
+    background: white;
+    border-radius: 1000px;
+    animation: zoomies 5s infinite linear;
+}
+
+.cloud::before {
+    content: "";
+    position: absolute;
+    top: -80%;
+    left: 10%;
+    width: 50%;
+    height: 150%;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud::after {
+    content: "";
+    position: absolute;
+    top: -40%;
+    right: 20%;
+    width: 30%;
+    height: 100%;
+    background: white;
+    border-radius: 50%;
+}
+
+@keyframes zoomies {
+    from {
+        left: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        left: 100%;
+        transform: translateX(0%);
+    }
+}
+/* error */
+.error {
+    position: relative;
+    animation: shake .1s linear;
+    animation-iteration-count: 3;
+}
+.form-floating {
+    position: relative;
+}
+
+
+.main-container {
+    overflow: hidden;
+}

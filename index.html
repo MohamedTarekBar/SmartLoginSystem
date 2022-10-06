@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/login.png" type="image/x-icon">
+</head>
+
+<body class="bg-light-gray vh-100 d-flex align-items-center d-none">
+    <div class="container-fluid main-container mx-4 light-shadow bg-white rounded-3">
+        <div class="row h-100 d-flex">
+            <div class="col-lg-6">
+                <div class="container p-5">
+                    <form action="">
+                        <div
+                            class="form-header mb-5 d-flex justify-content-center flex-column align-items-center gap-3 ">
+                            <i id="formHeaderIcon" class="bi display-3 text-soft-purble"></i>
+                            <p id="formHeaderText" class="text display-5"></p>
+                        </div>
+                        <div class="form-body mb-5">
+                            <div class="form-floating mb-3 d-none">
+                                <input type="text" class="form-control" id="userNameTF" placeholder="name@example.com">
+                                <label for="floatingInput">User name</label>
+                            </div>
+                            <!-- remove username in login_mode -->
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="emailTF" placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="passwordTF" placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                        </div>
+                        <div class="form-footer d-flex flex-column gap-4">
+                            <div class="form-mode d-flex align-items-center">
+                                <div class="row align-items-center">
+                                    <div class="col-sm col-md-auto">
+                                        <span id="askingUserisExisit"></span>
+                                    </div>
+                                    <div class="col d-flex align-items-center">
+                                        <button id="toggleAuthMode"
+                                            class="btn border-0 text-light-purble text-light-purble-hover p-0"
+                                            type="button"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="submitFormBtn" type="button"
+                                class="btn bg-soft-purble bg-soft-purble-hover w-fit-content px-5"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6 d-lg-flex d-sm-none cloud-container">
+                <div class="clouds">
+                    <div class="cloud one"></div>
+                    <div class="cloud two"></div>
+                    <div class="cloud three"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/Managers/GlobalObjects.js" type="module"></script>
+    <script src="js/Lib/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js" type="module"></script>
+</body>
+
+</html>
