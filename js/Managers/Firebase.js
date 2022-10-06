@@ -53,6 +53,7 @@ export default class FireBaseManager {
             userLocalStorage.attackingGuard()
         }
         }).catch((error) => {
+         utility.hideIndicator()
         console.error(error);
         });
     }
@@ -74,6 +75,7 @@ export default class FireBaseManager {
         });
       })
       .catch (error => {
+        utility.hideIndicator()
         const errorCode = error.code;
         const errorMessage = error.message;
 
@@ -98,6 +100,7 @@ export default class FireBaseManager {
         utility.hideIndicator()
       })
       .catch (error => {
+        utility.hideIndicator()
         const errorCode = error.code;
         const errorMessage = error.message;
         if (errorCode == 'auth/user-not-found') {
