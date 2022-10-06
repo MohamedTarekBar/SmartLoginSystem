@@ -1,6 +1,6 @@
 'use strict';
 
-import {utility, userLocalStorage} from './GlobalObjects.js';
+import {utility, userLocalStorage, FB} from './GlobalObjects.js';
 import '../Lib/firebase/FB-app.js';
 import '../Lib/firebase/FB-auth.js';
 import '../Lib/firebase/FB-database.js';
@@ -29,13 +29,27 @@ export default class FireBaseManager {
   }
 
   async writeUserData (userId, name, email, callback) {
-    utility.appearIndicator(document.body)
+    utility.appearIndicator(document.body);
     await this.db.ref ('users/' + userId).set ({
       username: name,
       email: email,
     });
-    utility.hideIndicator()
+    utility.hideIndicator();
     return callback ();
+  }
+
+  leaveFeedback (userId, feedback, callback) {
+    utility.appearIndicator(document.body);
+    this.getUserData (function (email, username) {
+      FB.db.ref ('users/' + userId).set ({
+        username: username,
+        email: email,
+        feedback: feedback
+      });
+      return callback ();
+    })
+    
+    utility.hideIndicator();
   }
 
   async getUserData( data ) {
@@ -54,7 +68,7 @@ export default class FireBaseManager {
         }
         }).catch((error) => {
          utility.hideIndicator()
-        console.error(error);
+        console.log(error);
         });
     }
   }

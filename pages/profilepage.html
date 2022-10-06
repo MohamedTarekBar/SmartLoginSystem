@@ -30,9 +30,13 @@
 </nav>
 
 <body class="bg-light-gray min-vh-100 d-flex justify-content-center align-items-center">
-    <section class="d-flex justify-content-center flex-column align-items-center h-100">
-        <h1 id="greetingUser">Hello &#128512; </h1>
-        <p></p>
+    <section class="d-flex justify-content-center flex-column align-items-center h-100 w-100">
+        <h1 id="greetingUser" class="text-center">Hello &#128512; </h1>
+        <div class="w-50 mt-3">
+            <label class=" fw-bolder mb-1" for="clientFeedback">Leave A Feedback</label>
+            <textarea class="form-control mb-2" id="clientFeedback"></textarea>
+            <button id="clientFeedbackBtn" class="btn btn-warning"> Send Feedback</button>
+        </div>
     </section>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
