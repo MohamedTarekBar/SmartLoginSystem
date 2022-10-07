@@ -57,21 +57,21 @@ function setUpView () {
   addFeedbacks()
 }
 
-function addFeedbacks() {
-  FB.allFeedbacks(function(data) {
-  let cartona = ``
-  for (let i = 0; i < data.length; i++) {
-    let feedback = data[i].feedback
-    if (feedback != undefined) {
-      if(feedback.trim() != "") {
-      cartona += `<div class="OtherFeedbacks w-50 mt-3 bg-light p-3 rounded-4">
-      <div class="username">${data[i].username}</div>
-      <div class="email text-muted ">${data[i].email}</div>
-      <div class="feedback text-primary">${data[i].feedback}</div>
-      </div>`
+function addFeedbacks () {
+  FB.allFeedbacks (function (data) {
+    let cartona = ``;
+    for (let i = 0; i < data.length; i++) {
+      let feedback = data[i].feedback;
+      if (data[i].feedback != undefined) {
+        if (feedback.trim () != '') {
+          cartona += `<div class="OtherFeedbacks w-50 mt-3 bg-light p-3 rounded-4">
+        <div class="username">${data[i].username}</div>
+        <div class="email text-muted ">${data[i].email}</div>
+        <div class="feedback text-primary">${data[i].feedback}</div>
+        </div>`;
+        }
       }
     }
-  }
-  utility.outlet('#feedbacks').innerHTML = cartona
-})
+    utility.outlet ('#feedbacks').innerHTML = cartona;
+  });
 }
