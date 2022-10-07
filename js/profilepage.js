@@ -39,11 +39,10 @@ let clientFeedbackBtn = utility.outlet ('#clientFeedbackBtn');
       var user = userLocalStorage.getUserData ();
       FB.leaveFeedback (user.uid, clientFeedback.value, function () {
         clientFeedback.value = '';
+          setUpView ();
       });
-      addFeedbacks()
     }
   );
-  setUpView ();
 }) ();
 
 function setUpView () {
