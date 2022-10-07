@@ -16,6 +16,7 @@ let clientFeedback = utility.outlet ('#clientFeedback');
 let clientFeedbackBtn = utility.outlet ('#clientFeedbackBtn');
 
 (async function () {
+
   logoutBtn.addEventListener (utility.getCommonEvents ().onClick, function () {
     userLocalStorage.userLoggedOut ();
   });
@@ -43,6 +44,7 @@ let clientFeedbackBtn = utility.outlet ('#clientFeedbackBtn');
       });
     }
   );
+  setUpView ();
 }) ();
 
 function setUpView () {
@@ -56,7 +58,6 @@ function setUpView () {
 }
 
 function addFeedbacks() {
-
   FB.allFeedbacks(function(data) {
   let cartona = ``
   for (let i = 0; i < data.length; i++) {
