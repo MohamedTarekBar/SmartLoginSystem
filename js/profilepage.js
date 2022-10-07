@@ -53,7 +53,7 @@ function setUpView () {
     emailTextField.value = email;
     greetingUser.innerHTML = `Hello ${username} &#128512;`;
   });
-  addFeedbacks()
+//   addFeedbacks()
 }
 
 function addFeedbacks() {
