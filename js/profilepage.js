@@ -40,6 +40,7 @@ let clientFeedbackBtn = utility.outlet ('#clientFeedbackBtn');
       FB.leaveFeedback (user.uid, clientFeedback.value, function () {
         clientFeedback.value = '';
       });
+      addFeedbacks()
     }
   );
   setUpView ();
