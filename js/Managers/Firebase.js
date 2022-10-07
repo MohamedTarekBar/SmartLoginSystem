@@ -75,17 +75,17 @@ export default class FireBaseManager {
 
   async allFeedbacks( data ) {
     const dbRef = this.db.ref();
-    const userId = userLocalStorage.getUserData().uid
-    const arr = []
+    const userId = userLocalStorage.getUserData().uid;
+    const arr = [];
     if (userId == null) {
-      userLocalStorage.attackingGuard()
+      userLocalStorage.attackingGuard();
     } else {
      await dbRef.child("users").get().then((snapshot) => {
         if (snapshot.exists()) {
             for (const prop in snapshot.val()) {
-                arr.push(snapshot.val()[prop])
+                arr.push(snapshot.val()[prop]);
             }
-            data(arr)
+            data(arr);
         } else {
 
         }
