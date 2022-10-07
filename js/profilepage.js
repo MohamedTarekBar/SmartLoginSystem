@@ -53,12 +53,12 @@ function setUpView () {
     emailTextField.value = email;
     greetingUser.innerHTML = `Hello ${username} &#128512;`;
   });
-//   addFeedbacks()
+  addFeedbacks()
 }
 
 function addFeedbacks() {
 
-FB.allFeedbacks(function(data) {
+  FB.allFeedbacks(function(data) {
   let cartona = ``
   for (let i = 0; i < data.length; i++) {
     if (data[i].feedback != undefined) {
@@ -72,5 +72,4 @@ FB.allFeedbacks(function(data) {
   }
   utility.outlet('#feedbacks').innerHTML = cartona
 })
-  
 }
