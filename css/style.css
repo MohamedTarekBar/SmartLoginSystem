@@ -148,8 +148,9 @@ body {
 .form-floating {
     position: relative;
 }
-
-
 .main-container {
     overflow: hidden;
+}
+.OtherFeedbacks .email {
+    font-size: 0.7rem;
 }

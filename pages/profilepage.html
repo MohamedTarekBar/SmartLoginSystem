@@ -13,36 +13,38 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="assets/login.png" type="image/x-icon">
 </head>
-<nav class="navbar navbar-expand-lg bg-light fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#"></a>
-        <div class="btn-group dropstart">
-            <button type="button" class="btn btn-secondary dropdown-toggle d-flex" data-bs-toggle="dropdown"
-                aria-expanded="false"><i class="bi bi-gear-fill d-flex justify-content-center align-items-center"></i>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a data-bs-toggle="modal" data-bs-target="#exampleModal" id="profileSetting" class="dropdown-item"
-                        href="#"></a></li>
-                <li><a class="dropdown-item" id="logoutBtn" href="#">Log out</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
-<body class="bg-light-gray min-vh-100 d-flex justify-content-center align-items-center">
-    <section class="d-flex justify-content-center flex-column align-items-center h-100 w-100">
-        <h1 id="greetingUser" class="text-center">Hello &#128512; </h1>
-        <div class="w-50 mt-3">
-            <label class=" fw-bolder mb-1" for="clientFeedback">Leave A Feedback</label>
+
+<body class="bg-light-gray min-vh-100">
+    <nav class="navbar bg-light sticky-top mb-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <div class="btn-group dropstart">
+                <button type="button" class="btn btn-secondary dropdown-toggle d-flex" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="bi bi-gear-fill d-flex justify-content-center align-items-center"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a data-bs-toggle="modal" data-bs-target="#Modal" id="profileSetting" class="dropdown-item"
+                            href="#"></a></li>
+                    <li><a class="dropdown-item" id="logoutBtn" href="#">Log out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="d-flex flex-column align-items-center h-100 w-100">
+        <div class="w-50 mt-3 bg-light p-3 rounded-4">
+            <label class=" fw-bolder mb-1" for="clientFeedback" id="greetingUser">Hello</label>
             <textarea class="form-control mb-2" id="clientFeedback"></textarea>
             <button id="clientFeedbackBtn" class="btn btn-warning"> Send Feedback</button>
         </div>
+        <div id="feedbacks" class="feedbacks w-100 d-flex justify-content-center gap-3 flex-column align-items-center">
+        </div>
     </section>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Update User Data</h1>
+                    <h1 class="modal-title fs-5" id="ModalLabel">Update User Data</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body d-flex gap-2 flex-column">

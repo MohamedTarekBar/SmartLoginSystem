@@ -73,6 +73,28 @@ export default class FireBaseManager {
     }
   }
 
+  async allFeedbacks( data ) {
+    const dbRef = this.db.ref();
+    const userId = userLocalStorage.getUserData().uid
+    const arr = []
+    if (userId == null) {
+      userLocalStorage.attackingGuard()
+    } else {
+     await dbRef.child("users").get().then((snapshot) => {
+        if (snapshot.exists()) {
+            for (const prop in snapshot.val()) {
+                arr.push(snapshot.val()[prop])
+            }
+            data(arr)
+        } else {
+
+        }
+        }).catch((error) => {
+          console.log(error);
+        });
+    }
+  }
+
   async createUserFB (user, getInputs) {
     utility.appearIndicator(document.body)
     firebase
